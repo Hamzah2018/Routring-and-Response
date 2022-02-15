@@ -24,6 +24,24 @@ function routing(req, res){
         }
     }
 
+    // the form data names
+    // /login
+    // username
+    // email
+    // password
+    // Special
+    // month
+    // month
+
+    if(usrname == 'Hamzah' && password == "700450#" && emaill =="Hamz7X@outlook.com" && Specialization=='IT')
+{
+    handelrequest('admin.html',res);
+
+}
+else{
+    handelrequest('erorr.html',res);
+}
+
 
 function handelrequest(filePath, res){
     fliSytem.readFile(filePath,null,(error,data)=>{
