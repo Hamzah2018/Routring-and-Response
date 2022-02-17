@@ -1,6 +1,8 @@
 
 const fliSytem = require('fs'); 
 const url = require('url');
+const express = require('express');
+const app = express();
 // const url = require('url');
 function routing(req, res){
     
@@ -9,16 +11,16 @@ function routing(req, res){
         // res.end(index.html);
         switch(path){
             case '/':
-                handelrequest('index.html',res);
+                handelrequest('index.ejs',res);
                 break;
             case '/admin':
-                handelrequest('admin.html',res);
+                handelrequest('admin.ejs',res);
             break;
             case '/regester':
-                handelrequest('regest.html',res);
+                handelrequest('regest.ejs',res);
                 break;
             default:
-                handelrequest('erorr.html',res);
+                handelrequest('erorr.ejs',res);
                 break;
                   
         }
@@ -32,7 +34,7 @@ function routing(req, res){
     // Special
     // month
     // month
-
+/*
     if(usrname == 'Hamzah' && password == "700450#" && emaill =="Hamz7X@outlook.com" && Specialization=='IT')
 {
     handelrequest('admin.html',res);
@@ -41,7 +43,7 @@ function routing(req, res){
 else{
     handelrequest('erorr.html',res);
 }
-
+*/
 
 function handelrequest(filePath, res){
     fliSytem.readFile(filePath,null,(error,data)=>{
